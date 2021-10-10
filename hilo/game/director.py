@@ -1,19 +1,18 @@
 from game.dealer import Dealer
 import time
-from colorama import Back,Fore,init
+from colorama import Back,init
 init(autoreset=True)
 
 print(Back.BLUE +"Hi, Welcome to our Game")
 time.sleep(0.7)
+
 class Director:
-    """A code template for a person who directs the game. The responsibility of 
-    this class of objects is to keep track of the score and control the 
-    sequence of play.
+    """A code template for a person who directs the game. 
     
     Attributes:
         keep_playing (boolean): Whether or not the player wants to keep playing.
-        score (number): The total number of points earned.
-        thrower (Thrower): An instance of the class of objects known as Thrower.
+        score (number): The total number of points.
+        dealer (Dealer): An instance of the class of objects known as dealer.
     """
 
     def __init__(self):
@@ -39,8 +38,7 @@ class Director:
             self.do_output_2()
 
     def get_inputs(self):
-        """Gets the inputs at the beginning of each round of play. In this case,
-        that means throwing the dice.
+        """Gets the inputs at the beginning of each round of play. 
 
         Args:
             self (Director): An instance of Director.
@@ -59,9 +57,7 @@ class Director:
         self.dealer.score = self.score
         
     def do_output_1(self):
-        """Outputs the important game information for each round of play. In 
-        this case, that means the dice that were rolled and the score.
-
+        """Outputs the first half of game information for each round of play.
         Args:
             self (Director): An instance of Director.
         """
@@ -72,8 +68,8 @@ class Director:
         print(f"\nNext card was: {self.dealer.dice[1]}")
 
     def do_output_2(self):
-        """Outputs the important game information for each round of play. In 
-        this case, that means the dice that were rolled and the score.
+        """Outputs the second half game information for each round of play.
+        After answer the Higher or Lower question.  
 
         Args:
             self (Director): An instance of Director.

@@ -8,8 +8,9 @@ class Dealer:
     sequence of play.
     
     Attributes:
-        dice (boolean): 
-        num_throws (number): 
+        dice (list): 
+        answer (list):
+        score (number): 
     """
     def __init__(self):
         """The class constructor.
@@ -17,15 +18,13 @@ class Dealer:
         Args:
             self (Thrower): an instance of Director.
         """
-        self.dice = []
+        self.list = []
         self.answer = []
         self.score = 0
 
     def can_throw(self):
-        """Determines whether or not the Thrower can throw again. 
-        It returns a boolean value that is true if the dice have 
-        at least a five, or a one, or the num_throws is greater 
-        than zero. Otherwise, it returns false.
+        """Determines how many times the dealer will 
+        show a card. If the score reaches 0, returns a False.
         
         Args:
             self (Thrower): an instance of Director.
@@ -39,16 +38,17 @@ class Dealer:
 
     def get_points(self):
         """Calculates and returns the total points for the current
-        dice. Ones are worth 100 points. Fives are worth 50 points.
+        turn. Correct answers are worth 100 points. Wrong answers 
+        are worth -75 points.
         
         Args:
             self (Thrower): an instance of Director.
         """
-        if self.answer == "h" and self.dice[1] > self.dice[0]:
+        if self.answer == "h" and self.list[1] > self.list[0]:
             print(Fore.GREEN +"😃"+"😃"+" "+"Good!!!!!!!")
             return 100
             
-        elif self.answer == "l" and self.dice[1] < self.dice[0]:
+        elif self.answer == "l" and self.list[1] < self.list[0]:
             print(Fore.GREEN +"😃"+"😃"+" "+"Good!!!!!!!")
             return 100
             
@@ -57,13 +57,12 @@ class Dealer:
             return -75
 
     def throw_dice(self):
-        """Randomly generates five new dice values and adds them 
-        to the dice list. It also increments the num_throws attribute 
-        by one.
+        """Randomly generates two new values and adds them 
+        to the list. 
         
         Args:
             self (Thrower): an instance of Director.
         """
         for x in range(2):
             one = random.randint(1, 13)
-            self.dice.append(one)
+            self.list.append(one)
