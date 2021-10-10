@@ -62,10 +62,10 @@ class Director:
             self (Director): An instance of Director.
         """
         
-        print(f"\nThe card is: {self.dealer.dice[0]}")
+        print(f"\nThe card is: {self.dealer.list[0]}")
         another = input("Higher or lower? [h/l] ")
         self.dealer.answer = another
-        print(f"\nNext card was: {self.dealer.dice[1]}")
+        print(f"\nNext card was: {self.dealer.list[1]}")
 
     def do_output_2(self):
         """Outputs the second half game information for each round of play.
@@ -80,5 +80,4 @@ class Director:
             choice = input("Keep playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
-            print(Back.BLUE +"Thanks for playing!!!")
             self.keep_playing = False

@@ -8,7 +8,7 @@ class Dealer:
     sequence of play.
     
     Attributes:
-        dice (list): 
+        list (list): 
         answer (list):
         score (number): 
     """
@@ -30,10 +30,9 @@ class Dealer:
             self (Thrower): an instance of Director.
         """
         if self.score <= 0:
-            print(Back.BLUE +"Thanks for playing!!!")
             return False
         else:
-            self.dice.clear()
+            self.list.clear()
             return True
 
     def get_points(self):
