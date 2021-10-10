@@ -7,7 +7,11 @@ game is ended for you!
 
 ## Getting Started
 ---
-Make sure you have Python 3.8.0 or newer installed and running on your machine. 
+Make sure you have Python 3.8.0 or newer installed and running on your machine.
+Also install the Colorama library with the command.
+```
+pip install colorama
+```
 Open a terminal and browse to the project's root folder. Start the program by 
 running the following command.
 ```
