@@ -1,4 +1,6 @@
 import random
+from colorama import Back,Fore,init
+init(autoreset=True)
 
 class Dealer:
     """A code template for a person who directs the game. The responsibility of 
@@ -29,6 +31,7 @@ class Dealer:
             self (Thrower): an instance of Director.
         """
         if self.score <= 0:
+            print(Back.BLUE +"Thanks for playing!!!")
             return False
         else:
             self.dice.clear()
@@ -42,12 +45,15 @@ class Dealer:
             self (Thrower): an instance of Director.
         """
         if self.answer == "h" and self.dice[1] > self.dice[0]:
+            print(Fore.GREEN +"😃"+"😃"+" "+"Good!!!!!!!")
             return 100
             
         elif self.answer == "l" and self.dice[1] < self.dice[0]:
+            print(Fore.GREEN +"😃"+"😃"+" "+"Good!!!!!!!")
             return 100
             
         else:
+            print(Fore.RED +"☹"+"☹"+" "+ "Fail!!!!!!!")
             return -75
 
     def throw_dice(self):

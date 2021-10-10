@@ -1,5 +1,10 @@
 from game.dealer import Dealer
+import time
+from colorama import Back,Fore,init
+init(autoreset=True)
 
+print(Back.BLUE +"Hi, Welcome to our Game")
+time.sleep(0.7)
 class Director:
     """A code template for a person who directs the game. The responsibility of 
     this class of objects is to keep track of the score and control the 
@@ -60,6 +65,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        
         print(f"\nThe card is: {self.dealer.dice[0]}")
         another = input("Higher or lower? [h/l] ")
         self.dealer.answer = another
@@ -72,9 +78,11 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        time.sleep(0.7)
         print(f"Your score is: {self.score}")
         if self.dealer.can_throw():
             choice = input("Keep playing? [y/n] ")
             self.keep_playing = (choice == "y")
         else:
+            print(Back.BLUE +"Thanks for playing!!!")
             self.keep_playing = False
