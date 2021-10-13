@@ -19,7 +19,7 @@ click the "run" icon.
 
 ## Colorama library
 ---
-Before starting to start the code, it is necessary to install the colorama library. Open a terminal put the following command
+Before starting to start the code, it is necessary to install the colorama library. Open a terminal and put the following command.
 ```
 py -m pip install colorama
 ```
